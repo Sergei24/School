@@ -28,7 +28,7 @@ def E_field (n, charges):
     Ey = Ey*(-1)
     return Ex, Ey
     
-  def plot_field (n, charges, k = 1):
+def plot_field (n, charges, k = 1):
 
     plt.figure()
     plt.axes([0.025, 0.025, 0.95, 0.95])
@@ -39,7 +39,6 @@ def E_field (n, charges):
     phi = phi_field (n, charges)
     pot = plt.contourf(x, y, phi, alpha=0.8,
                   cmap=plt.cm.winter)
-    cb = plt.colorbar(pot)
 
     # plot E
     Ex, Ey = E_field(n, charges)
@@ -55,9 +54,10 @@ def E_field (n, charges):
 
     plt.show()
     
-    n = (100, 100)
+
+n = (100, 100)
     
-    charges = np.ones((4,3))
+charges = np.ones((4,3))
 #charge 1
 charges[0,0]  = 1                   # charge
 charges[0,1:] = np.array([ n[0]/4,  n[0]/4]) # coordinates
